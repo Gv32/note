@@ -1,0 +1,5 @@
+SAMBA:
+linux/samba/is_known_pipename
+
+SSH:
+auxiliary/scanner/ssh/libssh_auth_bypass

