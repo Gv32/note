@@ -1,0 +1,42 @@
+Metasploit:
+db_status (check the DB status)
+db_import (import nmap scan)
+db_nmap (run nmap scan)
+hosts (see saved hosts in the current workspace)
+services (see saved services in the current workspace)
+vulns(see saved vulnerabilities in the current workspace)
+
+Meterpreter:
+sysinfo (see the inforation about the current session)
+run autorute -s IP_OUR_MACHINE (pivoting)
+
+Post Exploit (Windows):
+post/windows/gather/win_privs
+post/windows/gather/enum_logged_on_users
+post/windows/gather/checkvm
+post/windows/gather/enum_applications
+post/windows/gather/enum_av_excluded
+post/windows/gather/enum_computers
+post/windows/gather/enum_patches
+post/windows/gather/enum_shares
+post/windows/manage/enable_rdp
+
+Persiststence (Windows):
+exploit/windows/local/persistence_service
+post/windows/manage/enable_rdp
+
+Windows PrivEsc:
+bypassuac_eventvwr
+bypassuac_injection
+
+Post Exploit (Linux):
+post/linux/gather/enum_configs
+post/multi/gather/env
+post/linux/gather/enum_network
+post/linux/gather/enum_protections
+post/linux/gather/enum_system
+post/linux/gather/checkcontainer
+post/linux/gather/checkvm
+post/linux/gather/enum_users_history
+post/multi/manage/system_session
+post/linux/manage/download_exec

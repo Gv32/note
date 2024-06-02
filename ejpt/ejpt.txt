@@ -101,8 +101,8 @@ UAC:
 Token Impersonation:
 	SeAssignPrimaryToken, SeCreateToken, SeImpersonatePrivilege are the privileges required for a successful impersonation attack
 	load incognito (meterpreter command)
-	list_tockens -u (list all tokens)
-	impersonate_token "NAME TOKEN"
+	list_tokens -u (list all tokens)
+	impersonate_token "NAME TOKEN" (then migrate to a process with the same user)
 
 Linux:
 
