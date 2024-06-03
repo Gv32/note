@@ -53,6 +53,8 @@ post/linux/manage/sshkey_persistence
 
 Persistence (Linux):
 cron_persistence
+service_persistence
+sshkey_persistence
 
 Linux PrivEsc:
 exploit/unix/local/chkrootkit
