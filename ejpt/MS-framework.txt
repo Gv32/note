@@ -51,4 +51,8 @@ post/linux/gather/phpmyadmin_credsteal
 post/linux/gather/pptpd_chap_secrets
 post/linux/manage/sshkey_persistence
 
-Persistence (Linux)
+Persistence (Linux):
+cron_persistence
+
+Linux PrivEsc:
+exploit/unix/local/chkrootkit
