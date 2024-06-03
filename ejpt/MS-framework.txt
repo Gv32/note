@@ -22,7 +22,7 @@ post/windows/gather/enum_patches
 post/windows/gather/enum_shares
 post/windows/manage/enable_rdp
 
-Persiststence (Windows):
+Persistence (Windows):
 exploit/windows/local/persistence_service
 post/windows/manage/enable_rdp
 
@@ -50,3 +50,5 @@ post/linux/gather/enum_xchat
 post/linux/gather/phpmyadmin_credsteal
 post/linux/gather/pptpd_chap_secrets
 post/linux/manage/sshkey_persistence
+
+Persistence (Linux)
