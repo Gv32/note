@@ -8,7 +8,7 @@ vulns(see saved vulnerabilities in the current workspace)
 
 Meterpreter:
 sysinfo (see the inforation about the current session)
-run autorute -s IP_OUR_MACHINE (pivoting)
+run autorute -s IP_EXPLOITED_MACHINE (pivoting)
 
 Post Exploit (Windows):
 post/windows/gather/win_privs
