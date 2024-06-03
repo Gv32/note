@@ -9,6 +9,7 @@ vulns(see saved vulnerabilities in the current workspace)
 Meterpreter:
 sysinfo (see the inforation about the current session)
 run autorute -s IP_EXPLOITED_MACHINE/NEW_SUBNET (pivoting)
+portfwd add -l OUR_PORT -p VICTIM_PORT -r VICTIM_IP
 
 Post Exploit (Windows):
 post/windows/gather/win_privs
