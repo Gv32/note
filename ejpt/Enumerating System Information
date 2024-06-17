@@ -3,3 +3,11 @@ WINDOWS:
 Enumerating System Information:
 -systeminfo
 -wmic qfe get Caption,Description,HotFixID,InstalledOn
+
+Enumerating Users & Groups:
+-post/windows/gather/enum_logged_on_users
+-whoami /priv
+-net users
+-net user USERNAME
+-net localgroup
+-net localgroup GROUP
