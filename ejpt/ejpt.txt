@@ -104,6 +104,8 @@ Token Impersonation:
 	list_tokens -u (list all tokens)
 	impersonate_token "NAME TOKEN" (then migrate to a process with the same user)
 
+powershell -ep bypass -c ". .\PrivescCheck.ps1; Invoke-PrivescCheck"
+
 Linux:
 
 Cron:
