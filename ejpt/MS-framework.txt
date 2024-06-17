@@ -25,6 +25,8 @@ post/windows/manage/enable_rdp
 Persistence (Windows):
 exploit/windows/local/persistence_service
 post/windows/manage/enable_rdp
+run getgui -e -u USER -p PASSWD (create a USER to connect via RDP)
+
 
 Windows PrivEsc:
 bypassuac_eventvwr
