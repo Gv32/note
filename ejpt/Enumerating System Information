@@ -27,3 +27,10 @@ Enumerating Processes & Services:
 -tasklist /SVC
 -schtasks /query /fo LIST
 
+Automating Windows Local Enumeration:
+-post/windows/gather/win_privs
+-post/windows/gather/enum_logged_on_users
+-post/windows/gather/checkvm
+-post/windows/gather/enum_applications
+-post/windows/gather/enum_computers
+-post/windows/gather/enum_patches
