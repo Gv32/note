@@ -11,3 +11,19 @@ Enumerating Users & Groups:
 -net user USERNAME
 -net localgroup
 -net localgroup GROUP
+
+Enumerating Network Information:
+-ipconfig
+-ipconfig /all
+-route print
+-arp -a
+-netstat -ano
+
+Enumerating Processes & Services:
+-ps
+-pgrep PROCESS
+-net start
+-wmic service list brief
+-tasklist /SVC
+-schtasks /query /fo LIST
+
