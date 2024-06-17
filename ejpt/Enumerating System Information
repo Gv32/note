@@ -1,0 +1,5 @@
+WINDOWS:
+
+Enumerating System Information:
+-systeminfo
+-wmic qfe get Caption,Description,HotFixID,InstalledOn
